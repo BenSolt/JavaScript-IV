@@ -37,8 +37,15 @@ class Instructor extends Person {
     }
 
 
-    grade(subject) {
-        console.log(`${this.name} receives a perfect score on ${subject}`);
+
+    //
+    //receives a student object and a subject string as arguments and logs out
+    //'{student.name} receives a perfect score on {subject}'
+    //
+    //
+
+    grade(student, subject) {
+        console.log(`${student.name} receives a perfect score on ${subject}`);
     }
 
 }
@@ -61,15 +68,23 @@ class Student extends Person {
     }
 
 
+
+    //
     //a method that logs out all of the student's favoriteSubjects one by one.
+    //
+    // []
+    //
 
     listsSubjects() {
-        console.log(`${this.favSubjects}`)
+        for (let i = 0; i < this.favSubjects.length; i++)
+            console.log(`${this.favSubjects[i]}`);
     }
+
 
     PRAssignment(subject) {
         console.log(`${this.name} has submitted a PR for ${subject}`);
     }
+
 
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
@@ -118,18 +133,18 @@ const Ben = new Student({
     name: 'Benjamin',
     location: 'Philadelphia area',
     age: 35,
-    favSubjects: 'math',
+    favSubjects: ['math', 'Science', 'history']
 });
 
 
 //P Manager setup
 
 const Jon = new ProjectManager({
-    name: 'Fred',
-    location: 'Bedrock',
-    age: 37,
-    favLanguage: 'JavaScript',
-    specialty: 'Front-end',
+    name: 'Jon',
+    location: 'Alaska',
+    age: 30,
+    favLanguage: 'Java',
+    specialty: 'Back-End',
     catchPhrase: `Don't forget the homies`
 });
 
@@ -137,23 +152,28 @@ const Jon = new ProjectManager({
 
 
 
-// Student
 
+//SPEAK
 
 Ben.speak();
+fred.speak();
+Jon.speak();
 
+
+
+//Student
 
 Ben.PRAssignment('java');
 
 Ben.sprintChallenge('Javascript');
 
-
-
 Ben.listsSubjects();
 
 
 
-fred.grade('java');
+//Instructor
+
+fred.grade(Ben, 'java');
 
 
 
@@ -166,7 +186,10 @@ fred.speak();
 fred.demo('math');
 
 
+
+
 // Project Manager
+
 Jon.debugsCode('alex', 'Javascript')
 
-Jon.standUp('Sari', 'aaaaaa')
+Jon.standUp('Web22')
