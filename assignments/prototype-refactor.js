@@ -30,19 +30,11 @@ class GameObject {
         return `${this.name} was removed from the game.`
     }
 
+    dimensions(length, width, height) {
+        return this.dimensions;
+    }
+
 }
-
-//prototype
-
-
-
-
-
-
-GameObject.prototype.dimensions = function(length, width, height) {
-    return this.dimensions;
-};
-
 
 /*
   === CharacterStats ===
